@@ -8,7 +8,7 @@ const SearchBar = () => {
      "
     >
       <Search className="w-4 h-4 text-gray-500" />
-      <input id="search" placeholder="Search..." />
+      <input id="search" placeholder="Search..." className="px-1" />
     </div>
   );
 };
