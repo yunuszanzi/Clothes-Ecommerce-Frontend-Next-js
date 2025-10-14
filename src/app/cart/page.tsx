@@ -122,7 +122,7 @@ const CartPage = () => {
           {activeStep === 1 ? (
             "products"
           ) : activeStep === 2 ? (
-            <ShippingForm />
+            <ShippingForm setShippingForm={setShippingForm} />
           ) : activeStep === 3 && shippingForm ? (
             <PaymentForm />
           ) : (
