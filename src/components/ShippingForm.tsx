@@ -65,7 +65,7 @@ const ShippingForm = ({
           className="border-b border-gray-200 py-2 outline-none text-sm"
           type="text"
           id="phone"
-          placeholder="+92 3082352331"
+          placeholder="3082352331"
           {...register("phone")}
         />
         {errors.phone && (
