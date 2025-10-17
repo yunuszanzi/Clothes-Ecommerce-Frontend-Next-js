@@ -1,6 +1,9 @@
 import ProductInteraction from "@/components/ProductInteraction";
 import { ProductType } from "@/types";
 import Image from "next/image";
+import { title } from "node:process";
+import { describe } from "node:test";
+import { string } from "zod";
 
 // TEMPORARY
 const product: ProductType = {
@@ -18,6 +21,19 @@ const product: ProductType = {
     purple: "/products/1p.png",
     green: "/products/1gr.png",
   },
+};
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { id: string };
+}) => {
+  //TODO:get the product from db
+  //TEMPORARY
+  return {
+    title: product.name,
+    describe: product.description,
+  };
 };
 
 const ProductPage = async ({
@@ -78,11 +94,11 @@ const ProductPage = async ({
           />
         </div>
         <p className="text-gray-500 text-xs">
-          By clicking Pay Now, you agree to our{" "}
-          <span className="underline hover:text-black">Terms & Conditions</span>{" "}
+          By clicking Pay Now, you agree to our
+          <span className="underline hover:text-black">Terms & Conditions</span>
           and <span className="underline hover:text-black">Privacy Policy</span>
           . You authorize us to charge your selected payment method for the
-          total amount shown. All sales are subject to our return and{" "}
+          total amount shown. All sales are subject to our return and
           <span className="underline hover:text-black">Refund Policies</span>.
         </p>
       </div>
